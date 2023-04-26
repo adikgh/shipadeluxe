@@ -79,29 +79,6 @@
 
 		</div>
 
-		<div class="uc_list">
-			<div class="head_c">
-				<h4>Фотолар</h4>
-			</div>
-			<div class="cours_ls">
-				<div class="cours_lsi ">
-					<input type="file" class="item_file2 file" multiple accept=".png, .jpeg, .jpg">
-					<div class="bq3_ci_rg item_ava_clc2">
-						<i class="fal fa-plus"></i>
-						<span>Қосу</span>
-					</div>
-				</div>
-
-				<? $cblock = db::query("select * from sanatorium_img where sanatorium_id = '$cours_id'"); ?>			
-				<? while($cblock_d = mysqli_fetch_assoc($cblock)): ?>
-					<div class="cours_lsi">
-						<div class="cours_lsimg" data-id="<?=$cblock_d['id']?>"><div class="lazy_img" data-src="/assets/uploads/sanatorium/<?=$cblock_d['img']?>"></div></div>
-						<div class="cours_lsix sn_img_del" data-id="<?=$cblock_d['id']?>"><i class="fal fa-times"></i></div>
-					</div>
-				<? endwhile ?>
-			</div>
-		</div>
-
 		<div class="">
 			<div class="head_c">
 				<h4>Бөлмелер</h4>
@@ -131,6 +108,29 @@
 						</div>
 				<? endwhile ?>
 
+			</div>
+		</div>
+
+		<div class="uc_list">
+			<div class="head_c">
+				<h4>Фотолар</h4>
+			</div>
+			<div class="cours_ls">
+				<div class="cours_lsi ">
+					<input type="file" class="item_file2 file" multiple accept=".png, .jpeg, .jpg">
+					<div class="bq3_ci_rg item_ava_clc2">
+						<i class="fal fa-plus"></i>
+						<span>Қосу</span>
+					</div>
+				</div>
+
+				<? $cblock = db::query("select * from sanatorium_img where sanatorium_id = '$cours_id'"); ?>			
+				<? while($cblock_d = mysqli_fetch_assoc($cblock)): ?>
+					<div class="cours_lsi">
+						<div class="cours_lsimg" data-id="<?=$cblock_d['id']?>"><div class="lazy_img" data-src="/assets/uploads/sanatorium/<?=$cblock_d['img']?>"></div></div>
+						<div class="cours_lsix sn_img_del" data-id="<?=$cblock_d['id']?>"><i class="fal fa-times"></i></div>
+					</div>
+				<? endwhile ?>
 			</div>
 		</div>
 
