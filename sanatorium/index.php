@@ -40,7 +40,7 @@
 								<div class="swiper-wrapper">
 									<? $data_img = db::query("select * from sanatorium_img where sanatorium_id = '$id'"); ?>
 									<?	while ($img = mysqli_fetch_array($data_img)): ?>
-										<div class="swiper-slide sana_bl1ti lazy_sana_img" data-src="/assets/uploads/sanatorium/<?=$sana['name']?>/<?=$img['img']?>"></div>
+										<div class="swiper-slide sana_bl1ti lazy_sana_img" data-src="/assets/uploads/sanatorium/<?=$img['img']?>"></div>
 									<? endwhile ?>
 								</div>
 							</div>
@@ -48,7 +48,7 @@
 								<div class="swiper-wrapper">
 									<? $data_img = db::query("select * from sanatorium_img where sanatorium_id = '$id'"); ?>
 									<?	while ($img = mysqli_fetch_array($data_img)): ?>
-										<div class="swiper-slide sana_bl1bi lazy_sana_img" data-src="/assets/uploads/sanatorium/<?=$sana['name']?>/<?=$img['img']?>"></div>
+										<div class="swiper-slide sana_bl1bi lazy_sana_img" data-src="/assets/uploads/sanatorium/<?=$img['img']?>"></div>
 									<? endwhile ?>
 								</div>
 							</div>
@@ -158,7 +158,7 @@
 									<div class="bl5_i">
 										<? if ($d['img']): ?>
 											<a class="bl5_ia" href="#/sanatorium/?id=<?=$ana['id']?>">
-												<div class="lazy_bag" data-src="/assets/uploads/sanatorium/<?=$sana['name']?>/<?=$d['img']?>"></div>
+												<div class="lazy_bag" data-src="/assets/uploads/sanatorium/<?=$d['img']?>"></div>
 											</a>
 										<? endif ?>
 										<div class="bl5_ic">
