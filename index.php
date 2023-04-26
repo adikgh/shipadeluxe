@@ -294,7 +294,7 @@
 					</div>
 					<div class="btn disb_zab2"><span><?=t::w('give')?></span></div>
 				</div>
-				<div class="bl13_r"><div class="bl13_ri lz_bl13" data-src="assets/img/bag/A4 - 5.png"></div></div>
+				<div class="bl13_r"><div class="bl13_ri lz_bl13" data-src="assets/img/bag/sww122.jpeg"></div></div>
 			</div>
 		</div>
 	</div>
