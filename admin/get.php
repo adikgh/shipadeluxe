@@ -97,16 +97,16 @@
 		$instagram = strip_tags($_POST['instagram']); $telegram = strip_tags($_POST['telegram']); $youtube = strip_tags($_POST['youtube']);
 		$metrika = strip_tags($_POST['metrika']); $pixel = strip_tags($_POST['pixel']);
 
-		if ($name) $upd = db::query("UPDATE `site` SET `name`='$name', `upd_dt` = '$datetime' WHERE `id` = '$id'");
-		if ($phone) $phone2 = '8'.substr(strval($phone), 1); $upd = db::query("UPDATE `site` SET `phone`='$phone2', `upd_dt` = '$datetime' WHERE `id` = '$id'");
-		if ($phone_alt) $upd = db::query("UPDATE `site` SET `phone_view`='$phone_alt', `upd_dt` = '$datetime' WHERE `id` = '$id'");
-		if ($whatsapp) $upd = db::query("UPDATE `site` SET `whatsapp`='$whatsapp', `upd_dt` = '$datetime' WHERE `id` = '$id'");
-		if ($whatsapp_alt) $upd = db::query("UPDATE `site` SET `whatsapp_view`='$whatsapp_alt', `upd_dt` = '$datetime' WHERE `id` = '$id'");
-		if ($instagram) $upd = db::query("UPDATE `site` SET `instagram`='$instagram', `upd_dt` = '$datetime' WHERE `id` = '$id'");
-		if ($telegram) $upd = db::query("UPDATE `site` SET `telegram`='$telegram', `upd_dt` = '$datetime' WHERE `id` = '$id'");
-		if ($youtube) $upd = db::query("UPDATE `site` SET `youtube`='$youtube', `upd_dt` = '$datetime' WHERE `id`= '$id'");
-		if ($metrika) $upd = db::query("UPDATE `site` SET `metrika`='$metrika', `upd_dt` = '$datetime' WHERE `id` = '$id'");
-		if ($pixel) $upd = db::query("UPDATE `site` SET `pixel`='$pixel', `upd_dt` = '$datetime' WHERE `id` = '$id'");
+		if ($name) $upd = db::query("UPDATE `site` SET `name`='$name' WHERE `id` = '$id'");
+		if ($phone) $phone2 = '8'.substr(strval($phone), 1); $upd = db::query("UPDATE `site` SET `phone`='$phone2' WHERE `id` = '$id'");
+		if ($phone_alt) $upd = db::query("UPDATE `site` SET `phone_view`='$phone_alt' WHERE `id` = '$id'");
+		if ($whatsapp) $upd = db::query("UPDATE `site` SET `whatsapp`='$whatsapp' WHERE `id` = '$id'");
+		if ($whatsapp_alt) $upd = db::query("UPDATE `site` SET `whatsapp_view`='$whatsapp_alt' WHERE `id` = '$id'");
+		if ($instagram) $upd = db::query("UPDATE `site` SET `instagram`='$instagram' WHERE `id` = '$id'");
+		if ($telegram) $upd = db::query("UPDATE `site` SET `telegram`='$telegram' WHERE `id` = '$id'");
+		if ($youtube) $upd = db::query("UPDATE `site` SET `youtube`='$youtube' WHERE `id`= '$id'");
+		if ($metrika) $upd = db::query("UPDATE `site` SET `metrika`='$metrika' WHERE `id` = '$id'");
+		if ($pixel) $upd = db::query("UPDATE `site` SET `pixel`='$pixel' WHERE `id` = '$id'");
 
 		echo 'yes';
 		exit();
