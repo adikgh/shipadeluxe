@@ -2724,6 +2724,12 @@
 	padding: 60px 90px;
 	background: var(--wh);
 }
+@media(max-width: 500px){
+	.bl10_c{
+		width: 100%;
+		padding: 15px 20px;
+	}
+}
 
 .bl10_c .head_c{padding:0}
 .bl10_c .head_c p{margin-top:20px}
