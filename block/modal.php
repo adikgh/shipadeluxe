@@ -1,4 +1,11 @@
-<!-- block form -->
+	<!--  -->
+	<a target="_blank" href="https://wa.me/<?=$site['whatsapp']?>?text=Я%20заинтересован%20по%20поводу%20санаторий%20...">
+		<div type="button" class="callback-btw">
+		   <i class="fab fa-whatsapp"></i>
+		</div>
+	</a>
+
+	<!-- block form -->
 	<div class="pop_bl fr">
 		<div class="pop_bl_a zabr_back"></div>
 		<div class="pop_bl_c">

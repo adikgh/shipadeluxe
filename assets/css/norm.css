@@ -1470,3 +1470,77 @@ ul, li{list-style:none}
 	text-align: center;
 	padding-left: 6px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+.callback-bt, .callback-btw{
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	height:72px;
+	width:72px;
+	z-index:9999;
+
+	background:var(--cl);
+	box-shadow:var(--bx3);
+	border:1px solid var(--cl);
+	border-radius:50%;
+	transition:.3s;
+	cursor:pointer;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	animation:hoverWave linear 1s infinite;
+}
+.callback-btw{
+	/* width: 54px; */
+	/* height: 54px; */
+	/* bottom: 130px; */
+	/* right: 39px; */
+	/* animation: none; */
+	background:#25D366;
+	border: 0;
+	box-shadow: var(--bx_b2);
+}
+.callback-bt:hover, .callback-btw:hover{
+	background:#fff;
+	transition:.3s;
+}
+
+.callback-bt i, .callback-btw i{
+	color:#fff;
+	font-size:34px;
+	transition:.3s;
+	line-height: 66px;
+	transition: .5s ease-in-out;
+	animation: 1200ms ease 0s normal none 1 running shake;
+	animation-iteration-count: infinite;
+}
+.callback-btw i{
+ 	/* font-size: 20px; */
+ 	/* animation: none; */
+}
+.callback-bt:hover i, .callback-btw:hover i{
+	color:var(--cl);
+}
