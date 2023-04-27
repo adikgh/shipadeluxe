@@ -2712,73 +2712,19 @@
 .bl10{
 	position: relative;
 	width: 100%;
-	min-height: 780px;
-	padding-top: 160px;
-	overflow: hidden;
+	padding: 40px 0;
 }
-@media(max-width:1024px){.bl10{padding-top:60px;min-height:580px}}
-
-.bl10_a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size:100% auto;
-	background-position: center 100%;
-	background-repeat: no-repeat;
-	z-index: -5;
-}
-@media(max-width:1024px){.bl10_a{background-size:auto 100%;background-position:20% center}}
-
-
-.bl10_abc{
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-}
-.bl10_ab{
-	position: absolute;
-	z-index: -4;
-	bottom: -30px;
-	left: 0;
-	width: 1560px;
-	height: 280px;
-	background-size: auto 100%;
-	background-position: center center;
-	background-repeat: no-repeat;
-	animation: cloud_ab calc(20s * var(--bl10)) linear infinite;
-}
-@media(max-width:1024px){.bl10_ab{bottom:-60px}}
-
 
 .bl10_c{
 	position: relative;
 	width: calc(100% - 60px);
 	max-width: 768px;
 	margin: auto;
-	border-radius: 30px;
+	border-radius: 12px;
 	padding: 60px 90px;
-	background: var(--wh2);
-	box-shadow: var(--bx4);
+	background: var(--wh);
 }
-@media(max-width:500px){.bl10_c{padding:30px}}
-@media(max-width:320px){.bl10_c{width:calc(100% - 30px);padding:30px 15px}}
 
-.bl10_c::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	transition: var(--tm);
-	backdrop-filter: blur(20px);
-	-webkit-backdrop-filter: blur(20px);
-	z-index: -1;
-	border-radius: 30px;
-}
 .bl10_c .head_c{padding:0}
 .bl10_c .head_c p{margin-top:20px}
 @media(max-width:375px){.bl10_c .head_c p{font-size:13.4px}}

@@ -1,3 +1,17 @@
+		<div class="bl10">
+			<div class="bl10_c" data-aos="fade-up">
+				<div class="head_c txt_c">
+					<h4><?=t::w('Still have questions?')?></h4>
+					<p><?=t::w('bl10_w')?></p>
+				</div>
+				<div class="form_c">
+					<div class="form_im dsp_n"><input type="text" class="sms" value="Консультация 2"></div>
+					<div class="form_im"><input type="tel" class="form_im_txt fr_phone phone " placeholder="8 (___) ___-__-__" ></div>
+					<div class="form_im"><div class="btn send"><span><?=t::w('submit your')?></span></div></div>
+				</div>
+			</div>
+		</div>
+
 	<!-- end body -->
 	</div>
 	
