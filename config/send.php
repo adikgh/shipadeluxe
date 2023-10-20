@@ -6,6 +6,7 @@
 	$token = "1082028620:AAGRXcmhEtOlK3Z29Fa7Vq6JfIK1Uwdw-P4";
 	$chat_id = "-1001385698308";
 
+	session_start();
 	if (!isset($_SESSION['ads'])) $_SESSION['ads'] = '';
 
 	// 
