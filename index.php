@@ -5,7 +5,7 @@
 			$_SESSION['ads'] = 'Google';
 			
 
-		} else if ($_GET['fb']) {
+		} else if ($_GET['ads'] == 'fb') {
 			$_SESSION['ads'] = 'Ins';
 		}
 	}
