@@ -3,11 +3,12 @@
 	if (isset($_GET['ads'])) {
 		if ($_GET['ads'] == 'g') {
 			$_SESSION['ads'] = 'Google';
-			
-
-		} else if ($_GET['ads'] == 'fb') {
-			$_SESSION['ads'] = 'Instagram';
-		}
+			if (isset($_GET['cit'])) {
+				if ($_GET['cit'] == 'sr') $_SESSION['cit'] = 'Saryagash';
+				else if ($_GET['cit'] == 'ala') $_SESSION['cit'] = 'Almaty';
+				else if ($_GET['cit'] == 'bur') $_SESSION['cit'] = 'Burabai';
+			}
+		} else if ($_GET['ads'] == 'fb') $_SESSION['ads'] = 'Instagram';
 	}
 
 

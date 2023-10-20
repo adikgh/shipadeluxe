@@ -8,6 +8,7 @@
 
 	session_start();
 	if (!isset($_SESSION['ads'])) $_SESSION['ads'] = '';
+	if (!isset($_SESSION['cit'])) $_SESSION['cit'] = '';
 
 	// 
 	if(isset($_GET['mess'])) {
@@ -19,7 +20,8 @@
 
 		$arr = array(
 			'Cайт: '		=> 'Басты',
-			'Канал'			=> $_SESSION['ads'],
+			'Канал: '		=> $_SESSION['ads'],
+			'Өңір: '		=> $_SESSION['cit'],
 			'Типі: ' 		=> $sms,
 			'Аты-жөні: ' 	=> $name,
 			'Телефон: ' 	=> $phone
@@ -40,7 +42,8 @@
 
 		$arr = array(
 			'Cайт: '	=> 'Басты',
-			'Канал'			=> $_SESSION['ads'],
+			'Канал: '	=> $_SESSION['ads'],
+			'Өңір: '	=> $_SESSION['cit'],
 			'Типі: '	=> $sms,
 			'Телефон: ' => $phone
 		);
@@ -63,14 +66,15 @@
 		$phone = strip_tags($_POST['phone']);
 
 		$arr = array(
-			'Cайт: '	=> 'Басты',
-			'Канал'			=> $_SESSION['ads'],
-			'Типі: ' => 'Тест №1',
-			'Адам саны: ' => $tv1,
-			'Дем алу күні: ' => $tv2,
-			'Бөлме: ' => $tv3,
-			'Аты-жөні: ' => $name,
-			'Телефон: ' => $phone
+			'Cайт: '			=> 'Басты',
+			'Канал: '			=> $_SESSION['ads'],
+			'Өңір: '			=> $_SESSION['cit'],
+			'Типі: ' 			=> 'Тест №1',
+			'Адам саны: ' 		=> $tv1,
+			'Дем алу күні: ' 	=> $tv2,
+			'Бөлме: ' 			=> $tv3,
+			'Аты-жөні: ' 		=> $name,
+			'Телефон: ' 		=> $phone
 		);
 
 		foreach($arr as $key => $value) {$txt .= "<b>".$key."</b> ".$value."%0A";};
@@ -93,8 +97,9 @@
 		$phone = strip_tags($_POST['phone']);
 
 		$arr = array(
-			'Канал'			=> $_SESSION['ads'],
-			'Типі: '			=> 'Забронировать',
+			'Канал: '		=> $_SESSION['ads'],
+			'Өңір: '		=> $_SESSION['cit'],
+			'Типі: '		=> 'Забронировать',
 			'Санатория: '	=> $sms1,
 			'Номер: '		=> $sms2,
 			'Басталуы: '	=> $dt,
