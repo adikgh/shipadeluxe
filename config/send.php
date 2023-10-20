@@ -6,6 +6,7 @@
 	$token = "1082028620:AAGRXcmhEtOlK3Z29Fa7Vq6JfIK1Uwdw-P4";
 	$chat_id = "-1001385698308";
 
+	if (!isset($_SESSION['ads'])) $_SESSION['ads'] = '';
 
 	// 
 	if(isset($_GET['mess'])) {
@@ -16,10 +17,11 @@
 		// $phone = substr_replace($phone, '8', 0, 1);
 
 		$arr = array(
-			'Cайт: '	=> 'Басты',
-			'Типі: ' => $sms,
-			'Аты-жөні: ' => $name,
-			'Телефон: ' => $phone
+			'Cайт: '		=> 'Басты',
+			'Канал'			=> $_SESSION['ads'],
+			'Типі: ' 		=> $sms,
+			'Аты-жөні: ' 	=> $name,
+			'Телефон: ' 	=> $phone
 		);
 
 		foreach ($arr as $key => $value) {$txt .= "<b>".$key."</b> ".$value."%0A";};
@@ -37,6 +39,7 @@
 
 		$arr = array(
 			'Cайт: '	=> 'Басты',
+			'Канал'			=> $_SESSION['ads'],
 			'Типі: '	=> $sms,
 			'Телефон: ' => $phone
 		);
@@ -60,6 +63,7 @@
 
 		$arr = array(
 			'Cайт: '	=> 'Басты',
+			'Канал'			=> $_SESSION['ads'],
 			'Типі: ' => 'Тест №1',
 			'Адам саны: ' => $tv1,
 			'Дем алу күні: ' => $tv2,
@@ -88,6 +92,7 @@
 		$phone = strip_tags($_POST['phone']);
 
 		$arr = array(
+			'Канал'			=> $_SESSION['ads'],
 			'Типі: '			=> 'Забронировать',
 			'Санатория: '	=> $sms1,
 			'Номер: '		=> $sms2,

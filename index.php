@@ -1,5 +1,16 @@
 <? include 'config/core.php';
 
+	if (isset($_GET['ads'])) {
+		if ($_GET['ads'] == 'g') {
+			$_SESSION['ads'] = 'Google';
+			
+
+		} else if ($_GET['fb']) {
+			$_SESSION['ads'] = 'Ins';
+		}
+	}
+
+
 	// header('location: /catalog/');
 
 	// site setting
