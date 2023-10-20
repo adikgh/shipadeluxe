@@ -6,7 +6,7 @@
 			
 
 		} else if ($_GET['ads'] == 'fb') {
-			$_SESSION['ads'] = 'Ins';
+			$_SESSION['ads'] = 'Instagram';
 		}
 	}
 
