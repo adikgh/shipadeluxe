@@ -23,6 +23,12 @@
 	$site_set['header_wh'] = true;
 	// $site_set['header_logo'] = 'cl';
 	$site_set['preload'] = true;
+
+
+
+	$bl1_offer = 'bl1_offer'; if (isset($_GET['cit'])) $bl1_offer = 'bl1_offer_'.$_GET['cit'];
+	$bl1_disc = 'bl1_disc'; if (isset($_GET['cit'])) $bl1_disc = 'bl1_disc_'.$_GET['cit'];
+
 ?>
 <? include 'block/header.php'; ?>
 
@@ -32,8 +38,8 @@
 
 		<div class="bl_c">
 			<div class="bl1_c">
-				<div class="bl1_offer"><h1><?=t::w('bl1_offer', $lang)?></h1></div>
-				<div class="bl1_disc"><p><?=t::w('bl1_disc', $lang)?></p></div>
+				<div class="bl1_offer"><h1><?=t::w($bl1_offer, $lang)?></h1></div>
+				<div class="bl1_disc"><p><?=t::w($bl1_disc, $lang)?></p></div>
 				<div class="bl1_btn">
 					<div class="btn btn2 disb_zab">Получить консультацию</div>
 				</div>
