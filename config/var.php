@@ -5,14 +5,14 @@
     if (isset($_GET['lang'])) if ($_GET['lang'] == 'kz' || $_GET['lang'] == 'ru') $_SESSION['lang'] = $_GET['lang'];
     if (isset($_SESSION['lang'])) $lang = $_SESSION['lang'];
 
-    $ver = 1.18;
+    $ver = 2.51;
     $site_set = [
         'header' => true,
         'header2' => false,
         'header_wh' => false,
         'menu' => true,
         'tabs' => true,
-        
+
         'footer' => true,
         'footer_c' => true,
         // 'bl8' => true,
