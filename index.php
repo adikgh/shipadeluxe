@@ -18,7 +18,7 @@
 
 	// site setting
 	$menu_name = 'home';
-	if (isset($_SESSION['cit'])) $menu_name = 'home_'.$_SESSION['cit'];
+	if (isset($_GET['cit'])) $menu_name = 'home_'.$_GET['cit'];
 	$site_set['visible'] = 'after';
 	$site_set['header_wh'] = true;
 	// $site_set['header_logo'] = 'cl';
