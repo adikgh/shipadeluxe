@@ -1,13 +1,13 @@
 		<div class="bl10">
 			<div class="bl10_c" data-aos="fade-up">
 				<div class="head_c txt_c">
-					<h4><?=t::w('Still have questions?')?></h4>
-					<p><?=t::w('bl10_w')?></p>
+					<h4><?=t::w('Still have questions?', $lang)?></h4>
+					<p><?=t::w('bl10_w', $lang)?></p>
 				</div>
 				<div class="form_c">
 					<div class="form_im dsp_n"><input type="text" class="sms" value="Консультация 2"></div>
 					<div class="form_im"><input type="tel" class="form_im_txt fr_phone phone " placeholder="8 (___) ___-__-__" ></div>
-					<div class="form_im"><div class="btn send"><span><?=t::w('submit your')?></span></div></div>
+					<div class="form_im"><div class="btn send"><span><?=t::w('submit your', $lang)?></span></div></div>
 				</div>
 			</div>
 		</div>
@@ -24,40 +24,40 @@
 						<div class="footer_ttl">
 							<div class="footer_tth"><?=$site['name']?></div>
 							<div class="footer_ttc footer_ttc2">
-								<div class="footer_ttp"><?=t::w('footer_of1')?></div>
-								<a class="btn btn_back" href="#"><?=t::w('More3')?></a>
+								<div class="footer_ttp"><?=t::w('footer_of1', $lang)?></div>
+								<a class="btn btn_back" href="#"><?=t::w('More3', $lang)?></a>
 							</div>
 						</div>
 						<div class="footer_ttr">
 							<div class="footer_ttri">
-								<div class="footer_tth"><?=t::w('Help')?></div>
+								<div class="footer_tth"><?=t::w('Help', $lang)?></div>
 								<div class="footer_tta"><i class="far fa-angle-down"></i></div>
 								<div class="footer_ttc">
-									<a href="/about/feedback/"><?=t::w('Feedback')?></a>
-									<a href="/about/address.php"><?=t::w('Find a branch')?></a>
-									<a href="/about/faq/"><?=t::w('FAQ')?></a>
-									<a href="/about/privacy/returns-claims.php"><?=t::w('Return policy')?></a>
-									<a href="/about/privacy/guarantee.php"><?=t::w('Guarantee')?></a>
+									<a href="/about/feedback/"><?=t::w('Feedback', $lang)?></a>
+									<a href="/about/address.php"><?=t::w('Find a branch', $lang)?></a>
+									<a href="/about/faq/"><?=t::w('FAQ', $lang)?></a>
+									<a href="/about/privacy/returns-claims.php"><?=t::w('Return policy', $lang)?></a>
+									<a href="/about/privacy/guarantee.php"><?=t::w('Guarantee', $lang)?></a>
 								</div>
 							</div>
 							<div class="footer_ttri">
-								<div class="footer_tth"><?=t::w('About company')?></div>
+								<div class="footer_tth"><?=t::w('About company', $lang)?></div>
 								<div class="footer_tta"><i class="far fa-angle-down"></i></div>
 								<div class="footer_ttc">
-									<a href="/about/"><?=$site['name']?> <?=t::w('this')?></a>
-									<a href="/about/contact.php"><?=t::w('Contacts')?></a>
-									<a href="/about/career/"><?=t::w('Career')?></a>
-									<a href="/about/partners/"><?=t::w('Partners')?></a>
-									<a href="/news/"><?=t::w('News')?></a>
+									<a href="/about/"><?=$site['name']?> <?=t::w('this', $lang)?></a>
+									<a href="/about/contact.php"><?=t::w('Contacts', $lang)?></a>
+									<a href="/about/career/"><?=t::w('Career', $lang)?></a>
+									<a href="/about/partners/"><?=t::w('Partners', $lang)?></a>
+									<a href="/news/"><?=t::w('News', $lang)?></a>
 								</div>
 							</div>
 							<div class="footer_ttri">
-								<div class="footer_tth"><?=t::w('Policy')?> <?=$site['name']?></div>
+								<div class="footer_tth"><?=t::w('Policy', $lang)?> <?=$site['name']?></div>
 								<div class="footer_tta"><i class="far fa-angle-down"></i></div>
 								<div class="footer_ttc">
-									<a href="/about/privacy/privacy-policy.php"><?=t::w('Privacy Policy')?></a>
-									<a href="/about/privacy/terms-of-use.php"><?=t::w('Terms of use')?></a>
-									<a href="/about/privacy/cookie-policy.php"><?=t::w('Cache (cookie) policy')?></a>
+									<a href="/about/privacy/privacy-policy.php"><?=t::w('Privacy Policy', $lang)?></a>
+									<a href="/about/privacy/terms-of-use.php"><?=t::w('Terms of use', $lang)?></a>
+									<a href="/about/privacy/cookie-policy.php"><?=t::w('Cache (cookie) policy', $lang)?></a>
 								</div>
 							</div>
 						</div>
@@ -65,8 +65,8 @@
 					<div class="footer_tb">
 						<div class="footer_tbl">
 							<a class="btn btn_dd" href="https://instagram.com/<?=$site['instagram']?>" target="_blank"><i class="fab fa-instagram"></i></a>
-							<a class="btn btn_dd" href="https://youtube.com/<?=$site['youtube']?>" target="_blank"><i class="fab fa-youtube"></i></a>
-							<a class="btn btn_dd" href="https://t.me/<?=$site['telegram']?>" target="_blank"><i class="fab fa-telegram"></i></a>
+							<!-- <a class="btn btn_dd" href="https://youtube.com/<?//=$site['youtube']?>" target="_blank"><i class="fab fa-youtube"></i></a> -->
+							<!-- <a class="btn btn_dd" href="https://t.me/<?//=$site['telegram']?>" target="_blank"><i class="fab fa-telegram"></i></a> -->
 						</div>
 						<div class="footer_tbr">
 							<div class="btn btn_p">

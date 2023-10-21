@@ -1,10 +1,10 @@
 <? if ($site_set['header']): ?>
-	<div class="header <?=($site_set['header_wh'] == 'true'?'header_wh':'')?> <?=($site_set['header2'] == 'true'?'header2':'')?>">
+	<div class="header <?=($site_set['header_wh']?'header_wh':'')?> <?=($site_set['header2']?'header2':'')?>">
 		<div class="bl_c">
 			<div class="header_c">
 				<div class="header_l">
 					<a class="logo" href="/">
-						<? if ($site_set['header_wh'] == 'true'): ?>
+						<? if ($site_set['header_wh']): ?>
 							<div class="logo_i lazy_logo" data-src="/assets/img/logo/icon_white.png"></div>
 						<? else: ?>
 							<div class="logo_i lazy_logo" data-src="/assets/img/logo/icon_main.png"></div>
@@ -12,9 +12,9 @@
 						<span><?=$site['name']?></span>
 					</a>
 					<div class="menu_wq">
-						<a class="menu_wqi" href="/catalog/"><?=t::w('Sanatoriums')?></a>
-						<a class="menu_wqi" href="/about/"><?=t::w('About')?></a>
-						<a class="menu_wqi" href="/about/contact.php"><?=t::w('Contacts')?></a>
+						<a class="menu_wqi" href="/catalog/"><?=t::w('Sanatoriums', $lang)?></a>
+						<a class="menu_wqi" href="/about/"><?=t::w('About', $lang)?></a>
+						<a class="menu_wqi" href="/about/contact.php"><?=t::w('Contacts', $lang)?></a>
 						<!-- <a class="menu_wqi" href="/"></a> -->
 						<div class="lang">
 							<? if ($lang == 'kz'): ?> <a class="menu_wqi" href="<?=$url?>?lang=ru">Русский</a>
@@ -33,7 +33,7 @@
 					<div class="menu_o">
 						<div class="menu_oz"></div>
 						<div class="menu_os">					
-							<div class="menu_ot"><?=t::w('Menu')?></div>
+							<div class="menu_ot"><?=t::w('Menu', $lang)?></div>
 							<div class="menu_oc"><span></span><span></span><span></span></div>
 						</div>
 						<div class="menu_c">
@@ -42,19 +42,19 @@
 								<div class="menu_cnq">
 									<a class="menu_ci" href="/catalog/">
 										<div class="menu_cim"><i class="far fa-h-square"></i></div>
-										<span><?=t::w('Sanatoriums')?></span>
+										<span><?=t::w('Sanatoriums', $lang)?></span>
 									</a>
 									<div class="menu_ci menu_cip menu_cipc menu_clc_gprog">
 										<div class="menu_cim"><div class="lazy_menu" data-src="/assets/img/logo/icon_black.png"></div></div>
-										<span><?=t::w('About')?></span>
+										<span><?=t::w('About', $lang)?></span>
 									</div>
 									<div class="menu_ci menu_cip menu_cipc menu_clc_lang">
 										<? if ($lang == 'kz'): ?>
 											<div class="menu_cim"><div class="lazy_menu" data-src="/assets/img/icons/flag-kazakhstan_1f1f0-1f1ff.png"></div></div>
-											<span><?=t::w('Language')?>: <b>Қазақша</b></span>
+											<span><?=t::w('Language', $lang)?>: <b>Қазақша</b></span>
 										<? else: ?>
 											<div class="menu_cim"><div class="lazy_menu" data-src="/assets/img/icons/flag-russia_1f1f7-1f1fa.png"></div></div>
-											<span><?=t::w('Language')?>: <b>Русский</b></span>
+											<span><?=t::w('Language', $lang)?>: <b>Русский</b></span>
 										<? endif ?>
 									</div>
 								</div>
@@ -105,7 +105,7 @@
 									<!-- <span class="menu_cim_on"></span> -->
 								</div>
 								<div class="menu_cizt">
-									<span><?=t::w('Sales department')?></span>
+									<span><?=t::w('Sales department', $lang)?></span>
 									<div><?=$site['phone_view']?></div>
 								</div>
 								<div class="menu_cizi"><i class="fas fa-phone-alt"></i></div>
@@ -123,7 +123,7 @@
 
 <!-- tabs -->
 <? if ($site_set['menu']): ?>
-	<!-- <div class="tabs_f <?=($site_set['tabs']=='true'?'tabs_acts':'')?>">
+	<!-- <div class="tabs_f <?=($site_set['tabs']?'tabs_acts':'')?>">
 		<div class="tabs">
 			<a href="/" class="tabs_i <?=($menu_name=='home'?'tabs_iact':'')?>"><div class="tabs_img"></div></a>
 			<a href="/catalog.php" class="tabs_i <?=($menu_name=='catalog'?'tabs_iact':'')?>"><i class="far fa-hotel"></i></a>

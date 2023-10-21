@@ -18,7 +18,7 @@
 	// ];
 	$css = ['view'];
 	$js = ['view'];
-	$share_txt = 'https://'.$site['site'].'/sanatorium2/?id='.$id;
+	$share_txt = 'https://'.$site['site'].'/sanatorium/?id='.$id;
 
 ?>
 <? include '../block/header.php'; ?>
@@ -28,8 +28,8 @@
 		<div class="bl_c">
 			<div class="sana_th">
 				<a class="sana_thb" href="/catalog/"><i class="fal fa-long-arrow-left"></i></a>
-				<a class="sana_thi" href="/"><?=t::w('Home')?></a>
-				<a class="sana_thi" href="/catalog/"><?=t::w('Catalog')?></a>
+				<a class="sana_thi" href="/"><?=t::w('Home', $lang)?></a>
+				<a class="sana_thi" href="/catalog/"><?=t::w('Catalog', $lang)?></a>
 				<span class="sana_thi"><?=$sana['name_'.$lang]?></span>
 			</div>
 			<div class="sana_b">
@@ -40,7 +40,7 @@
 								<div class="swiper-wrapper">
 									<? $data_img = db::query("select * from sanatorium_img where sanatorium_id = '$id'"); ?>
 									<?	while ($img = mysqli_fetch_array($data_img)): ?>
-										<div class="swiper-slide sana_bl1ti lazy_sana_img" data-src="/assets/uploads/sanatorium/<?=$img['img']?>"></div>
+										<div class="swiper-slide sana_bl1ti lazy_sana_img" data-src="https://shipadeluxe.kz/assets/uploads/sanatorium/<?=$img['img']?>"></div>
 									<? endwhile ?>
 								</div>
 							</div>
@@ -48,7 +48,7 @@
 								<div class="swiper-wrapper">
 									<? $data_img = db::query("select * from sanatorium_img where sanatorium_id = '$id'"); ?>
 									<?	while ($img = mysqli_fetch_array($data_img)): ?>
-										<div class="swiper-slide sana_bl1bi lazy_sana_img" data-src="/assets/uploads/sanatorium/<?=$img['img']?>"></div>
+										<div class="swiper-slide sana_bl1bi lazy_sana_img" data-src="https://shipadeluxe.kz/assets/uploads/sanatorium/<?=$img['img']?>"></div>
 									<? endwhile ?>
 								</div>
 							</div>
@@ -59,16 +59,16 @@
 						<div class="blc1">
 							<div class="blc1_t">
 								<div class="head_star">
-									<span><?=t::w('Rating')?>:</span>
+									<span><?=t::w('Rating', $lang)?>:</span>
 									<div><?=fun::rank($sana['rank'])?></div>
 								</div>
 								<div class="head_around">
 									<i class="far fa-shield-check"></i>
-									<span><?=t::w('Low Price Guarantee')?></span>
+									<span><?=t::w('Low Price Guarantee', $lang)?></span>
 								</div>
 							</div>
 							<div class="blc1_h">
-								<span><?=t::w('Sanatorium')?>:</span>
+								<span><?=t::w('Sanatorium', $lang)?>:</span>
 								<h1 class="sana_blh"><?=$sana['name_'.$lang]?></h1>
 							</div>
 		
@@ -96,7 +96,7 @@
 							</div> -->
 		
 							<div class="blc1_in">
-								<span><?=t::w('Description')?>:</span>
+								<span><?=t::w('Description', $lang)?>:</span>
 								<div class="blc1_inc">
 									
 									<? $data_serv = db::query("select * from sanatorium_services_item where sanatorium_id = '$id'"); ?>
@@ -117,7 +117,7 @@
 									<? $data_serv = db::query("select * from sanatorium_services_pay where sanatorium_id = '$id'"); ?>
 									<? if (mysqli_num_rows($data_serv) != 0): ?>
 										<div class="blc1_ini">
-											<div><?=t::w('Paid services')?>:</div>
+											<div><?=t::w('Paid services', $lang)?>:</div>
 											<div><?=mysqli_num_rows($data_serv)?></div>
 										</div>
 									<? endif ?>
@@ -126,7 +126,7 @@
 							</div>
 
 							<div class="bl_share">
-								<p><?=t::w('SHARE')?>:</p>
+								<p><?=t::w('SHARE', $lang)?>:</p>
 								<div class="bl_share_c">
 									<a target="_blank" href="https://api.whatsapp.com/send?text=<?=$share_txt?>"><i class="fab fa-whatsapp"></i></a>
 									<a target="_blank" href="https://t.me/share/url?url=<?=$share_txt?>"><i class="fab fa-telegram-plane"></i></a>
@@ -142,15 +142,15 @@
 		
 					<div class="swiper sana_menu" id="sana_menu">
 						<div class="swiper-wrapper">
-							<a class="swiper-slide sana_menu_i <?=($pod_menu_name=='main'?'sana_menu_act':'')?>" href="#number"><?=t::w('Rooms')?></a>
-							<a class="swiper-slide sana_menu_i <?=($pod_menu_name=='about'?'sana_menu_act':'')?>" href="#about"><?=t::w('About the resort')?></a>
-							<a class="swiper-slide sana_menu_i <?=($pod_menu_name=='service'?'sana_menu_act':'')?>" href="#service"><?=t::w('Services')?></a>
-							<a class="swiper-slide sana_menu_i <?=($pod_menu_name=='service_pay'?'sana_menu_act':'')?>" href="#service_pay"><?=t::w('Paid services')?></a>
+							<a class="swiper-slide sana_menu_i <?=($pod_menu_name=='main'?'sana_menu_act':'')?>" href="#number"><?=t::w('Rooms', $lang)?></a>
+							<a class="swiper-slide sana_menu_i <?=($pod_menu_name=='about'?'sana_menu_act':'')?>" href="#about"><?=t::w('About the resort', $lang)?></a>
+							<a class="swiper-slide sana_menu_i <?=($pod_menu_name=='service'?'sana_menu_act':'')?>" href="#service"><?=t::w('Services', $lang)?></a>
+							<a class="swiper-slide sana_menu_i <?=($pod_menu_name=='service_pay'?'sana_menu_act':'')?>" href="#service_pay"><?=t::w('Paid services', $lang)?></a>
 						</div>
 					</div>
 
 					<div class="sana_bl2" id="number">
-						<div class="head_c"><h4 class=""><?=t::w('Select number')?></h4></div>
+						<div class="head_c"><h4 class=""><?=t::w('Select number', $lang)?></h4></div>
 						<div class="blc2_c">
 							<div class="blc2_b sana_cmc">
 								<? $sql = db::query("select * from `sanatorium_number` where sanatorium_id = '$id' and arh = 0 ORDER BY type_id ASC"); ?>
@@ -158,20 +158,20 @@
 									<div class="bl5_i">
 										<? if ($d['img']): ?>
 											<a class="bl5_ia" href="#/sanatorium/?id=<?=$ana['id']?>">
-												<div class="lazy_bag" data-src="/assets/uploads/sanatorium/<?=$d['img']?>"></div>
+												<div class="lazy_bag" data-src="https://shipadeluxe.kz/assets/uploads/sanatorium/<?=$d['img']?>"></div>
 											</a>
 										<? endif ?>
 										<div class="bl5_ic">
 											<div class="bl5_ict">
-												<div class="sana_inf_ictp"><?=t::w('from21')?><?=fun::d($d['door_id'])?> <?=t::w('from22')?></div>
+												<div class="sana_inf_ictp"><?=t::w('from21', $lang)?><?=fun::d($d['door_id'])?> <?=t::w('from22', $lang)?></div>
 												<div class="bl5_icn"><?=fun::t($d['type_id'])?></div>
 												<div class="sana_inf_icg">
-													<div class="sana_inf_ics"><i class="fas fa-user"></i><span><?=t::w('1 adult per night')?>:</span></div>
+													<div class="sana_inf_ics"><i class="fas fa-user"></i><span><?=t::w('1 adult per night', $lang)?>:</span></div>
 													<div class="sana_sena"><?=$d['price']?> <span>тг.</span></div>
 												</div>
 											</div>
 											<div class="bl5_icb" href="#/sanatorium/?id=<?=$ana['id']?>">
-												<div class="btn btn_cl disb_zab"><?=t::w('To book')?></div>
+												<div class="btn btn_cl disb_zab"><?=t::w('To book', $lang)?></div>
 											</div>
 										</div>
 									</div>
@@ -181,7 +181,7 @@
 					</div>
 
 					<div class="sana_bl2 " sana_bl3 id="about">
-						<div class="head_c"><h5 class=""><?=t::w('Info')?></h5></div>
+						<div class="head_c"><h5 class=""><?=t::w('Info', $lang)?></h5></div>
 						<div class="sana_bl_about">
 							<p><?=fun::txt($id)?></p>
 						</div>
@@ -191,7 +191,7 @@
 					<?	if (mysqli_num_rows($data_serv)): ?>
 
 						<div class="sana_bl2 " sana_bl3 id="service">
-							<div class="head_c"><h5 class=""><?=t::w('Services sanatorium')?></h5></div>
+							<div class="head_c"><h5 class=""><?=t::w('Services sanatorium', $lang)?></h5></div>
 							<div class="num_bl2_c">
 								<? $service_type = db::query("select * from sanatorium_services_type"); ?>
 								<? while ($service_type_c = mysqli_fetch_array($service_type)): ?>
@@ -224,7 +224,7 @@
 					<? $data_serv = db::query("select * from sanatorium_services_pay where sanatorium_id = '$id'"); ?>
 					<? if (mysqli_num_rows($data_serv)): ?>
 						<div class="sana_bl2 " sana_bl3  id="service_pay">
-							<div class="head_c"><h5 class=""><?=t::w('Paid services sanatorium')?></h5></div>
+							<div class="head_c"><h5 class=""><?=t::w('Paid services sanatorium', $lang)?></h5></div>
 							<div class="sana_bl5_c">
 								<? while ($serv = mysqli_fetch_array($data_serv)): ?>
 									<div class="sana_bl5_i">

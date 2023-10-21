@@ -12,6 +12,8 @@
 	}
 
 
+	$share_txt = 'Санатория жайлы ..';
+
 	// header('location: /catalog/');
 
 	// site setting
@@ -29,63 +31,10 @@
 
 		<div class="bl_c">
 			<div class="bl1_c">
-				<div class="bl1_offer"><h1><?=t::w('bl1_offer')?></h1></div>
-				<div class="bl1_disc"><p><?=t::w('bl1_disc')?></p></div>
-			</div>
-		</div>
-
-		<div class="bj_w">
-			<div class="bl_c">
-				<div class="bj_wc">
-					<div class="ucours_tm bj_wcq bj_wcq_country" bj_wcq_act>
-						<div class="ucours_tmi bj_wcqn">
-							<p><i class="fal fa-globe"></i></p>
-							<span>Казақстан</span>
-							<i class="fal fa-chevron-down"></i>
-						</div>
-						<div class="menu_c ucours_tma">
-							<? $cow = db::query("select * from `country` where parent_id is null"); ?>
-							<? while($ana = mysqli_fetch_array($cow)): ?>
-								<div class="menu_ci" data-id="<?=$ana['id']?>">
-									<!-- <div class="menu_cin"><i class="fal fa-square"></i></div> -->
-									<div class="menu_cih"><?=$ana['name_'.$lang]?></div>
-								</div>
-							<? endwhile ?>
-						</div>
-					</div>
-					<div class="ucours_tm bj_wcq bj_wcq_country2">
-						<div class="ucours_tmi bj_wcqn">
-							<p><i class="fal fa-map-marker-alt"></i></p>
-							<span><?=t::w('All regions')?></span>
-							<i class="fal fa-chevron-down"></i>
-						</div>
-						<div class="menu_c ucours_tma">
-							<? $cow = db::query("select * from `country` where parent_id is not null"); ?>
-							<? while($ana = mysqli_fetch_array($cow)): ?>
-								<div class="menu_ci" data-id="<?=$ana['id']?>">
-									<div class="menu_cih"><?=$ana['name_'.$lang]?></div>
-								</div>
-							<? endwhile ?>
-						</div>
-					</div>
-					<div class="ucours_tm bj_wcq bj_wcq_services">
-						<div class="ucours_tmi bj_wcqn">
-							<p><i class="fal fa-user-md"></i></p>
-							<span><?=t::w('All types of treatment')?></span>
-							<i class="fal fa-chevron-down"></i>
-						</div>
-						<div class="menu_c ucours_tma">
-							<? $cow = db::query("select * from `services`"); ?>
-							<? while($ana = mysqli_fetch_array($cow)): ?>
-								<div class="menu_ci" data-id="<?=$ana['id']?>">
-									<div class="menu_cih"><?=$ana['name_'.$lang]?></div>
-								</div>
-							<? endwhile ?>
-						</div>
-					</div>
-					<div class="bj_wcq">
-						<div class="btn bj_wcq_btn"><?=t::w('Find')?></div>
-					</div>
+				<div class="bl1_offer"><h1><?=t::w('bl1_offer', $lang)?></h1></div>
+				<div class="bl1_disc"><p><?=t::w('bl1_disc', $lang)?></p></div>
+				<div class="bl1_btn">
+					<div class="btn btn2 disb_zab">Получить консультацию</div>
 				</div>
 			</div>
 		</div>
@@ -97,8 +46,8 @@
 		<div class="bl_c">
 			<div class="head_c txt_c">
 				<div class="head_v1">
-					<div class="head_vt" data-aos="fade-up"><?=t::w('Our advantages')?></div>
-					<h3 data-aos="fade-up" data-aos-delay="100"><?=t::w('bl7_of2')?></h3>
+					<div class="head_vt" data-aos="fade-up"><?=t::w('Our advantages', $lang)?></div>
+					<h3 data-aos="fade-up" data-aos-delay="100"><?=t::w('bl7_of2', $lang)?></h3>
 				</div>
 			</div>
 			<div class="bl7_c">
@@ -112,8 +61,8 @@
 				<? endwhile ?>
 			</div>
 			<div class="bl7_b" data-aos="fade-up">
-				<p><?=t::w('bl7_of3')?></p>
-				<a class="btn btn_whatsapp" target="_blank" href="https://wa.me/<?=$site['whatsapp']?>"><i class="fab fa-whatsapp"></i><span><?=t::w('Write')?></span></a>
+				<p><?=t::w('bl7_of3', $lang)?></p>
+				<a class="btn btn_whatsapp" target="_blank" href="https://wa.me/<?=$site['whatsapp']?>"><i class="fab fa-whatsapp"></i><span><?=t::w('Write', $lang)?></span></a>
 			</div>
 		</div>
 	</div>
@@ -123,8 +72,8 @@
 		<div class="bl_c">
 			<div class="head_c txt_c">
 				<div class="head_v1">
-					<div class="head_vt"><?=t::w('OUR RECOMMENDATION')?></div>
-					<h4><?=t::w('bl5_of')?></h4>
+					<div class="head_vt"><?=t::w('OUR RECOMMENDATION', $lang)?></div>
+					<h4><?=t::w('bl5_of', $lang)?></h4>
 				</div>
 			</div>
 			<div class="bl5_c bl5_c2">
@@ -134,7 +83,7 @@
 
 						<a class="bl5_i bl5_i2" href="/sanatorium/?id=<?=$ana['id']?>" target="_blank">
 							<div class="bl5_ia" href="/sanatorium/?id=<?=$ana['id']?>">
-								<div class="lazy_bag" https://shipadeluxe.kz data-src="/assets/uploads/sanatorium/<?=$ana['img']?>"></div>
+								<div class="lazy_bag"  data-src="https://shipadeluxe.kz/assets/uploads/sanatorium/<?=$ana['img']?>"></div>
 							</div>
 							<div class="bl5_ic">
 								<div class="bl5_ict">
@@ -162,7 +111,7 @@
 
 								</div>
 								<div class="bl5_icb" href="/sanatorium/?id=<?=$ana['id']?>">
-									<div class="bl5_icp"><?=t::w('from1').fun::p($ana['id'])?> тг. <?=t::w('from2')?></div>
+									<div class="bl5_icp"><?=t::w('from1', $lang).fun::p($ana['id'])?> тг. <?=t::w('from2', $lang)?></div>
 									<div class="btn btn_dd btn_clm"><i class="fal fa-long-arrow-down"></i></div>
 								</div>
 							</div>
@@ -171,8 +120,8 @@
 					<? endwhile ?>
 			</div>
 			<div class="bl5_b">
-				<p><?=t::w('bl5_of2')?></p>
-				<a class="btn" href="/catalog"><span><?=t::w('View all')?></span><i class="far fa-long-arrow-right"></i></a>
+				<p><?=t::w('bl5_of2', $lang)?></p>
+				<a class="btn" href="/catalog"><span><?=t::w('View all', $lang)?></span><i class="far fa-long-arrow-right"></i></a>
 			</div>
 		</div>
 	</div>
@@ -184,73 +133,73 @@
 			<div class="bl4_con">
 
 				<div class="head_c txt_c">
-					<h4 data-aos="fade-up"><?=t::w('bl4_of')?></h4>
-					<p data-aos="fade-up" data-aos-delay="100"><?=t::w('bl4_p')?></p>
+					<h4 data-aos="fade-up"><?=t::w('bl4_of', $lang)?></h4>
+					<p data-aos="fade-up" data-aos-delay="100"><?=t::w('bl4_p', $lang)?></p>
 				</div>
 
 				<div class="bl4_cls swiper-container">
 					<div class="gallery-pagination bl4_pag" data-aos="fade-up" data-aos-delay="150"></div>
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<h5 class="bl4_v" data-aos="fade-up" data-aos-delay="200"><?=t::w('tv1')?></h5>
+							<h5 class="bl4_v" data-aos="fade-up" data-aos-delay="200"><?=t::w('tv1', $lang)?></h5>
 							<div class="form_im form_imr">
 								<div class="form_imri" data-aos="fade-up" data-aos-delay="250">
 									<label class="radio" for="tv11">
 										<input type="radio" name="tv1" value="1" id="tv11" checked>
-										<span>1 <?=t::w('person')?></span>
+										<span>1 <?=t::w('person', $lang)?></span>
 									</label>
 								</div>
 								<div class="form_imri" data-aos="fade-up" data-aos-delay="300">
 									<label class="radio" for="tv12">
 										<input type="radio" name="tv1" value="2" id="tv12">
-										<span>2 <?=t::w('person')?></span>
+										<span>2 <?=t::w('person', $lang)?></span>
 									</label>
 								</div>
 								<div class="form_imri" data-aos="fade-up" data-aos-delay="350">
 									<label class="radio" for="tv13">
 										<input type="radio" name="tv1" value="3-4" id="tv13">
-										<span>3-4 <?=t::w('person')?></span>
+										<span>3-4 <?=t::w('person', $lang)?></span>
 									</label>
 								</div>
 								<div class="form_imri" data-aos="fade-up" data-aos-delay="400">
 									<label class="radio" for="tv14">
-										<input type="radio" name="tv1" value="<?=t::w('more')?>" id="tv14">
-										<span><?=t::w('more')?></span>
+										<input type="radio" name="tv1" value="<?=t::w('more', $lang)?>" id="tv14">
+										<span><?=t::w('more', $lang)?></span>
 									</label>
 								</div>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<h5 class="bl4_v"><?=t::w('tv2')?></h5>
+							<h5 class="bl4_v"><?=t::w('tv2', $lang)?></h5>
 							<div class="form_im form_imr">
 								<div class="form_imri">
 									<label class="radio" for="tv21">
 										<input type="radio" name="tv2" value="5" id="tv21" checked>
-										<span>5 <?=t::w('days')?></span>
+										<span>5 <?=t::w('days', $lang)?></span>
 									</label>
 								</div>
 								<div class="form_imri">
 									<label class="radio" for="tv22">
 										<input type="radio" name="tv2" value="7" id="tv22">
-										<span>7 <?=t::w('days')?></span>
+										<span>7 <?=t::w('days', $lang)?></span>
 									</label>
 								</div>
 								<div class="form_imri">
 									<label class="radio" for="tv23">
 										<input type="radio" name="tv2" value="10" id="tv23">
-										<span>10 <?=t::w('days')?></span>
+										<span>10 <?=t::w('days', $lang)?></span>
 									</label>
 								</div>
 								<div class="form_imri">
 									<label class="radio" for="tv24">
-										<input type="radio" name="tv2" value="<?=t::w('more2')?>" id="tv24">
-										<span><?=t::w('more2')?></span>
+										<input type="radio" name="tv2" value="<?=t::w('more2', $lang)?>" id="tv24">
+										<span><?=t::w('more2', $lang)?></span>
 									</label>
 								</div>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<h5 class="bl4_v"><?=t::w('tv3')?></h5>
+							<h5 class="bl4_v"><?=t::w('tv3', $lang)?></h5>
 							<div class="form_im form_imr">
 								<div class="form_imri">
 									<label class="radio" for="tv31">
@@ -279,15 +228,15 @@
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<h5 class="bl4_v"><?=t::w('tv4')?></h5>
-							<div class="form_im"><input type="text" class="form_im_txt name" name="name" data-lenght="2" placeholder="<?=t::w('enter your name')?>" /></div>
+							<h5 class="bl4_v"><?=t::w('tv4', $lang)?></h5>
+							<div class="form_im"><input type="text" class="form_im_txt name" name="name" data-lenght="2" placeholder="<?=t::w('enter your name', $lang)?>" /></div>
 							<div class="form_im"><input type="tel" class="form_im_txt phone phone2 fr_phone" name="phone" data-lenght="11" placeholder="8 (___) ___-__-__" /></div>
 						</div>
 					</div>
 					<div class="bl4_clb" data-aos="fade-up">
-						<div class="gallery-prev"><div class="btn btn_back"><i class="far fa-angle-left"></i><span><?=t::w('back')?></span></div></div>
-						<div class="gallery-next"><div class="btn btn_back"><span><?=t::w('farther')?></span><i class="far fa-angle-right"></i></div></div>
-						<div class="gallery-send"><div class="btn btn_back test1"><span><?=t::w('pick up')?></span><i class="far fa-angle-right"></i></div></div>
+						<div class="gallery-prev"><div class="btn btn_back"><i class="far fa-angle-left"></i><span><?=t::w('back', $lang)?></span></div></div>
+						<div class="gallery-next"><div class="btn btn_back"><span><?=t::w('farther', $lang)?></span><i class="far fa-angle-right"></i></div></div>
+						<div class="gallery-send"><div class="btn btn_back test1"><span><?=t::w('pick up', $lang)?></span><i class="far fa-angle-right"></i></div></div>
 					</div>
 				</div>
 			</div>
@@ -301,10 +250,10 @@
 			<div class="bl131_c">
 				<div class="bl13_l">
 					<div class="head_c">
-						<h3><?=t::w('bl13_1o')?></h3>
-						<p><?=t::w('bl13_1p')?></p>
+						<h3><?=t::w('bl13_1o', $lang)?></h3>
+						<p><?=t::w('bl13_1p', $lang)?></p>
 					</div>
-					<div class="btn disb_zab2"><span><?=t::w('give')?></span></div>
+					<div class="btn disb_zab2"><span><?=t::w('give', $lang)?></span></div>
 				</div>
 				<div class="bl13_r"><div class="bl13_ri lz_bl13" data-src="assets/img/bag/sww122.jpeg"></div></div>
 			</div>
@@ -316,8 +265,8 @@
 		<div class="bl_c">
 			<div class="head_c txt_c">
 				<div class="head_v1">
-					<div class="head_vt" data-aos="fade-up"><?=t::w('Guest Reviews')?></div>
-					<h4 data-aos="fade-up" data-aos-delay="100"><?=t::w('bl9_of2')?></h4>
+					<div class="head_vt" data-aos="fade-up"><?=t::w('Guest Reviews', $lang)?></div>
+					<h4 data-aos="fade-up" data-aos-delay="100"><?=t::w('bl9_of2', $lang)?></h4>
 				</div>
 			</div>
 			<div class="bl9_c">
@@ -329,7 +278,7 @@
 								<div class="bl9_iln">
 									<div class="bl9_iln2">
 										<div class="bl9_ilogo lazy_rev" data-src="/assets/uploads/reviews/<?=$ana['img']?>"></div>
-										<div class="bl9_ilc"><div class="bl9_ilname"><?=$ana['name']?></div><div class="bl9_ils"><?=t::w('source:').$ana['sn']?></div></div>
+										<div class="bl9_ilc"><div class="bl9_ilname"><?=$ana['name']?></div><div class="bl9_ils"><?=t::w('source:', $lang).$ana['sn']?></div></div>
 									</div>
 									<div class="bl9_ildt">
 										<i class="fas fa-star"></i>
@@ -348,8 +297,8 @@
 				<div class="swiper-button-next bl9_next"><div class="btn btn_sqr"><i class="fal fa-chevron-right"></i></div></div>
 			</div>
 			<div class="bl9_b" data-aos="fade-up">
-				<p><?=t::w('bl9_of3')?></p>
-				<a target="_blank" href="https://wa.me/<?=$site['whatsapp']?>"><div class="btn"><?=t::w('Communication')?></div></a>
+				<p><?=t::w('bl9_of3', $lang)?></p>
+				<a target="_blank" href="https://wa.me/<?=$site['whatsapp']?>"><div class="btn"><?=t::w('Communication', $lang)?></div></a>
 			</div>
 		</div>
 	</div>
@@ -359,9 +308,9 @@
 		<div class="bl_c">
 			<div class="bl11_c">
 				<div class="bl11_l">
-					<div class="head_c"><h4><?=t::w('Frequently asked Questions')?></h4></div>
-					<p><?=t::w('bl11_disc')?></p>
-					<div class="bl11_btn"><div class="btn disb_zab"><span><?=t::w('submit your')?></span></div></div>
+					<div class="head_c"><h4><?=t::w('Frequently asked Questions', $lang)?></h4></div>
+					<p><?=t::w('bl11_disc', $lang)?></p>
+					<div class="bl11_btn"><div class="btn disb_zab"><span><?=t::w('submit your', $lang)?></span></div></div>
 					<div class="bl11_a lazy_bag" data-src="/assets/img/bag/doc2.png"></div>
 				</div>
 				<div class="bl11_r">

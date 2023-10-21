@@ -56,12 +56,12 @@
 	<div class="blc1">
 		<div class="bl_c">
 			<div class="head_c">
-				<h4 class=""><?=t::w('Choice of sanatorium')?></h4>
+				<h4 class=""><?=t::w('Choice of sanatorium', $lang)?></h4>
 				<div class="head_ln">
 					<ul>
-						<li><a href="/"><?=t::w('Home')?></a></li>
+						<li><a href="/"><?=t::w('Home', $lang)?></a></li>
 						<span><i class="fal fa-angle-right"></i></span>
-						<li><?=t::w('Choice of sanatorium')?></li>
+						<li><?=t::w('Choice of sanatorium', $lang)?></li>
 					</ul>
 				</div>
 				<!-- <div class="head_btn">
@@ -163,7 +163,7 @@
 							</div> -->
 						</div>
 						<div class="products_sr">
-							<div class="products_sr_it"><?=$page_result?> <?=t::w('positions')?></div>
+							<div class="products_sr_it"><?=$page_result?> <?=t::w('positions', $lang)?></div>
 						</div>
 					</div>
 				</div>
@@ -174,7 +174,7 @@
 
 						<a class="bl5_i" href="/sanatorium/?id=<?=$ana['id']?>" target="_blank">
 							<div class="bl5_ia" href="/sanatorium/?id=<?=$ana['id']?>">
-								<div class="lazy_bag" https://shipadeluxe.kz data-src="/assets/uploads/sanatorium/<?=$ana['img']?>"></div>
+								<div class="lazy_bag"  data-src="https://shipadeluxe.kz/assets/uploads/sanatorium/<?=$ana['img']?>"></div>
 							</div>
 							<div class="bl5_ic">
 								<div class="bl5_ict">
@@ -202,7 +202,7 @@
 
 								</div>
 								<div class="bl5_icb" href="/sanatorium/?id=<?=$ana['id']?>">
-									<div class="bl5_icp"><?=t::w('from1').fun::p($ana['id'])?> тг. <?=t::w('from2')?></div>
+									<div class="bl5_icp"><?=t::w('from1', $lang).fun::p($ana['id'])?> тг. <?=t::w('from2', $lang)?></div>
 									<div class="btn btn_dd btn_clm"><i class="fal fa-long-arrow-down"></i></div>
 								</div>
 							</div>

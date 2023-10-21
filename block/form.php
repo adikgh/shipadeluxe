@@ -4,8 +4,8 @@
 			<div class="form_pola lazy_bag" data-src="/assets/img/bag/slide2.jpg"></div>
 			<div class="form_pol_c">
 				<div class="head_c txt_c">
-					<h2><?=t::w('Fill out the application form')?></h2>
-					<p><?=t::w('form_p')?></p>
+					<h2><?=t::w('Fill out the application form', $lang)?></h2>
+					<p><?=t::w('form_p', $lang)?></p>
 				</div>
 				<div class="form_pol_con">
 					<div class="form_im">

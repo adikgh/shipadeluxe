@@ -3,7 +3,7 @@
 	<div class="preload">
 		<!-- <div class="preload_c">
 			<div class="preload_logo"></div>
-			<div class="preload_animate"><?=t::w('loading')?></div>
+			<div class="preload_animate"><?=t::w('loading', $lang)?></div>
 		</div> -->
 		<div class="preload_o2">
 			<div class="preload_o21"><div class="nocaret1">SHIPA</div></div>

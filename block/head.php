@@ -1,13 +1,19 @@
 <? $menu = mysqli_fetch_array(db::query("select * from `site_menu` where name = '$menu_name' and type = 'main'")); ?>
-<? if ($menu_name == 'sana') $menu['title'] = t::w('sana').$sana['name'].t::w('sana1'); ?>
+<? 
+	if ($menu_name == 'sanatorium') {
+		$menu['title_'.$lang] = t::w('sana', $lang).$sana['name_'.$lang].t::w('sana1', $lang);
+		$menu['disc_'.$lang] = t::w('sana', $lang).$sana['name_'.$lang].t::w('sana1', $lang);
+		$menu['keyw_'.$lang] = t::w('sana', $lang).$sana['name_'.$lang].t::w('sana1', $lang);
+	} 
+?>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title><?=$menu['title']?> | <?=$site['name']?></title>
-<meta name="description" content="<?=$menu['disc']?> <?=$site['phone_view']?>">
-<meta name="keywords" content="<?=$menu['keyw']?>">
-<meta name="theme-color" content="<?=$site['color']?>">
+<title><?=$menu['title_'.$lang]?> | <?=$site['name']?></title>
+<meta name="description" content="<?=$menu['disc_'.$lang]?> <?=$site['phone_view']?>">
+<meta name="keywords" content="<?=$menu['keyw_'.$lang]?>">
+<meta name="theme-color" content="<?//=$site['color']?>">
 
 <!-- icon -->
 <link rel="icon" href="/assets/img/logo/icon_main.png" type="image/x-icon">
@@ -17,8 +23,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://<?=$site['site']?>.kz" />
 <meta property="og:site_name" content="<?=$site['name']?>" />
-<meta property="og:title" content="<?=$menu['title']?> | <?=$site['name']?>" />
-<meta property="og:description" content="<?=$menu['disc']?> <?=$site['phone_view']?>" />
+<meta property="og:title" content="<?=$menu['title_'.$lang]?> | <?=$site['name']?>" />
+<meta property="og:description" content="<?=$menu['disc_'.$lang]?> <?=$site['phone_view']?>" />
 <meta property="og:image" content="/assets/img/logo/logo.jpg" />
 
 <!-- apple -->
@@ -28,8 +34,8 @@
 <!-- ms -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="cleartype" content="on">
-<meta name="msapplication-tooltip" content="<?=$menu['title']?> | <?=$site['name']?>">
-<meta name="msapplication-TileColor" content="<?=$site['color']?>">
+<meta name="msapplication-tooltip" content="<?=$menu['title_'.$lang]?> | <?=$site['name']?>">
+<meta name="msapplication-TileColor" content="<?//=$site['color']?>">
 <meta name="msapplication-starturl" content="https://<?=$site['site']?>">
 
 <!-- css -->
@@ -60,7 +66,6 @@
 
 	
 <? if ($site['metrika'] != null): ?>
-	<!-- Yandex.Metrika counter -->
 	<script type='text/javascript'>
 		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 		m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -70,7 +75,6 @@
 <? endif ?>
 
 <? if ($site['pixel'] != null): ?>
-	<!-- Facebook Pixel Code -->
 	<script>
 	!function(f,b,e,v,n,t,s)
 	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
